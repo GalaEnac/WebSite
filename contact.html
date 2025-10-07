@@ -1,0 +1,99 @@
+<!-- Section Contact avec Carte en Arrière-plan -->
+<section id="contact" class="section contact">
+  <!-- Carte en arrière-plan -->
+  <div class="map-background">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5782.056475696674!2d1.4830390999999996!3d43.5642947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebdcc97f63627%3A0x4973c9f85bbbf5fd!2s%C3%89cole%20Nationale%20de%20l&#39;Aviation%20Civile!5e0!3m2!1sfr!2sfr!4v1758992464853!5m2!1sfr!2sfr"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">Contactez-nous pour toute question ou pour rejoindre nos événements.</p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div class="contact-text">
+            <h4>Email</h4>
+            <p>contact@gala-enac.fr</p>
+          </div>
+        </div>
+
+        <a class="contact-link" href="https://maps.app.goo.gl/bT684GtKpjRPVmHR7" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir l'adresse de l'ENAC dans Google Maps">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">
+              <h4>Adresse</h4>
+              <p>7 Avenue Édouard Belin, 31400 Toulouse</p>
+            </div>
+          </div>
+        </a>
+
+        
+
+        <div class="social-media">
+          <h4>Suivez-nous</h4>
+          <div class="social-icons">
+            <a class="social-icon" href="https://www.instagram.com/galaenac" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a class="social-icon" href="https://www.facebook.com/share/1AJ6BSbDYH/" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a class="social-icon" href="https://www.linkedin.com/company/gala-enac" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <h3>Contactez-nous</h3>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Nom complet *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Sujet *</label>
+            <select id="subject" name="subject" required>
+              <option value="">Choisir un sujet</option>
+              <option value="adhesion">Adhésion au GALA</option>
+              <option value="evenement">Participation à un événement</option>
+              <option value="partenariat">Partenariat</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-full">
+            <span class="btn-text">Envoyer le message</span>
+            <span class="btn-loading hidden">Envoi en cours...</span>
+          </button>
+        </form>
+        
+        <div id="form-success" class="form-message success hidden">
+          <p>✅ Votre message a été envoyé avec succès ! Nous vous répondrons rapidement.</p>
+        </div>
+        
+        <div id="form-error" class="form-message error hidden">
+          <p>❌ Une erreur s'est produite. Veuillez réessayer ou nous contacter directement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

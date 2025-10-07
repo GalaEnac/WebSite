@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gala ENAC 2025 — Bal Masqué Vénitien à l'ENAC Toulouse. Informations, programme, bénévoles, partenaires et contact.">
+  <title>Gala ENAC 2025 — Bal Masqué Vénitien</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div id="nav-sentinel" aria-hidden="true"></div>
+
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="nav-container container">
+      <div id="nav-menu-left" class="nav-menu nav-menu-left" role="navigation" aria-label="Navigation gauche">
+        <ul class="nav-list nav-list-left">
+          <li class="nav-item"><a class="nav-link" href="#program">Programme</a></li>
+          <li class="nav-item"><a class="nav-link" href="#lineup">Line-up</a></li>
+          <li class="nav-item"><a class="nav-link" href="#volunteers">Bénévoles</a></li>
+          <li class="nav-item"><a class="nav-link" href="#support">Soutenir</a></li>
+        </ul>
+      </div>
+      <div class="nav-logo nav-center">
+        <a href="#hero-video" class="nav-link nav-logo-link" aria-label="Retour à l'accueil">
+          <img src="./assets/img/logo_gala_2025.png" alt="Logo du Gala ENAC 2025">
+        </a>
+      </div>
+      <div id="nav-menu-right" class="nav-menu nav-menu-right" role="navigation" aria-label="Navigation droite">
+        <ul class="nav-list nav-list-right">
+          <li class="nav-item"><a class="nav-link" href="#trailer">Trailer</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="#partners">Partenaires</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <button id="hamburger" class="hamburger" type="button" aria-label="Ouvrir le menu mobile" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- 1. Héro video -->
+    <section id="hero-video" class="hero-video" aria-label="Gala ENAC 2025">
+      <video class="hero-bg" autoplay muted loop playsinline poster="./assets/img/hero-poster.jpg">
+        <source src="./assets/video/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <div class="hero-intro">
+          <span class="hero-kicker">Gala ENAC 2025</span>
+          <h1 class="hero-title">Bal Masqué Vénitien</h1>
+          <p class="hero-tagline">Une soirée de prestige mêlant tradition, élégance et fête.</p>
+          <ul class="hero-meta">
+            <li><i class="fa-regular fa-calendar" aria-hidden="true"></i><span>Vendredi 21 novembre 2025</span></li>
+            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>École Nationale de l'Aviation Civile — Toulouse</span></li>
+          </ul>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://www.helloasso.com/" target="_blank" rel="noopener noreferrer">Réserver ma place</a>
+            <a class="btn btn-outline" href="#volunteers">Devenir bénévole</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="countdown-strip" aria-label="Compte à rebours vers le Gala">
+      <div class="container countdown-inner">
+        <span id="countdown" class="countdown-text">J-00 00h00m00s</span>
+      </div>
+    </section>
+
+    <!-- 2. Immersion -->
+    <section id="hero" class="section section-velvet hero-overview" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Immersion</span>
+          <h2 id="hero-heading" class="section-title">Une nuit d'élégance et de mystère</h2>
+          <p class="section-subtitle">Costumes somptueux, musique envoûtante et scénographie lumineuse : le Gala ENAC 2025 vous plonge au cœur des palais vénitiens.</p>
+        </div>
+        <div class="highlight-grid">
+          <article class="highlight-card">
+            <span class="highlight-icon"><i class="fa-regular fa-mask" aria-hidden="true"></i></span>
+            <h3>Masques d'exception</h3>
+            <p>Éveillez votre imagination avec des ateliers de confection et des mises en scène inspirées des carnavals italiens.</p>
+          </article>
+          <article class="highlight-card">
+            <span class="highlight-icon"><i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i></span>
+            <h3>Cocktail & dîner cabaret</h3>
+            <p>Savourez une expérience gastronomique orchestrée par nos chefs partenaires, sublimée par un spectacle cabaret.</p>
+          </article>
+          <article class="highlight-card">
+            <span class="highlight-icon"><i class="fa-solid fa-music" aria-hidden="true"></i></span>
+            <h3>Ambiance musicale</h3>
+            <p>Concerts, performances live et DJ sets : la magie continue toute la nuit jusqu'à l'aube éclatante.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Bénévoles (sans form) -->
+    <section id="volunteers" class="section section-midnight" aria-labelledby="volunteer-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Bénévoles</span>
+          <h2 id="volunteer-heading" class="section-title">Rejoins l'équipe du Gala</h2>
+          <p class="section-subtitle">Ta place est offerte en échange de ton aide. Ensemble, faisons rayonner le Bal Masqué Vénitien.</p>
+        </div>
+        <div class="volunteer-card">
+          <div class="volunteer-content">
+            <p>Grâce aux bénévoles, le Gala ENAC reste un événement inoubliable pour toute la communauté. Nous recherchons des profils motivés pour&nbsp;:</p>
+            <ul class="volunteer-list">
+              <li>Accueil des invités, gestion vestiaire et accompagnement des artistes.</li>
+              <li>Coordination technique, scénographie et animations thématiques.</li>
+              <li>Communication, réseaux sociaux et expérience VIP.</li>
+            </ul>
+            <p><strong>Ta place est offerte</strong> en échange de ton engagement sur les créneaux définis avant et pendant la soirée.</p>
+            <br>
+            <a class="btn btn-primary btn-full" href="https://forms.gle/your-volunteer-form" target="_blank" rel="noopener noreferrer">S'inscrire comme bénévole</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Soutien -->
+    <section id="support" class="section section-ebony" aria-labelledby="support-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Soutien</span>
+          <h2 id="support-heading" class="section-title">Aidez-nous à faire briller le Gala</h2>
+          <p class="section-subtitle">Chaque don contribue à la pérennité et à la qualité de l'événement. Merci pour votre générosité.</p>
+        </div>
+        <div class="support-card">
+          <p>Votre contribution finance la scénographie, les artistes et les expériences immersives qui font la singularité du Bal Masqué Vénitien.</p>
+          <br>
+          <a class="btn btn-gold" href="https://www.helloasso.com/" target="_blank" rel="noopener noreferrer">Accéder à la cagnotte officielle</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Programme -->
+    <section id="program" class="section section-velvet" aria-labelledby="program-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Programme</span>
+          <h2 id="program-heading" class="section-title">Déroulé de la soirée</h2>
+          <p class="section-subtitle">Un tempo millimétré pour une immersion totale, du coucher du soleil jusqu'à l'aube.</p>
+        </div>
+        <ol class="program-timeline">
+          <li class="program-item">
+            <time class="program-time" datetime="2025-11-21T19:00">19h00</time>
+            <div class="program-content">
+              <h3>Accueil & cocktail</h3>
+              <p>Réception des invités, remise des masques, ambiance musicale feutrée et animations photo.</p>
+            </div>
+          </li>
+          <li class="program-item">
+            <time class="program-time" datetime="2025-11-21T20:30">20h30</time>
+            <div class="program-content">
+              <h3>Dîner cabaret</h3>
+              <p>Menu gastronomique accompagné d'un cabaret aérien orchestré par nos partenaires artistiques.</p>
+            </div>
+          </li>
+          <li class="program-item">
+            <time class="program-time" datetime="2025-11-21T22:30">22h30</time>
+            <div class="program-content">
+              <h3>Concerts & spectacles</h3>
+              <p>Performances live et numéros immersifs entre traditions vénitiennes et innovation scénique.</p>
+            </div>
+          </li>
+          <li class="program-item">
+            <time class="program-time" datetime="2025-11-22T00:00">00h00</time>
+            <div class="program-content">
+              <h3>Feu d'artifice</h3>
+              <p>Un bouquet final au-dessus du campus pour révéler la splendeur du gala.</p>
+            </div>
+          </li>
+          <li class="program-item">
+            <time class="program-time" datetime="2025-11-22T00:30">00h30</time>
+            <div class="program-content">
+              <h3>Soirée dansante</h3>
+              <p>DJ sets, effets lumineux et surprises jusqu'à l'aube pour clôturer la nuit en beauté.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 6. Trailer -->
+    <section id="trailer" class="section section-midnight" aria-labelledby="trailer-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Trailer officiel</span>
+          <h2 id="trailer-heading" class="section-title">Revivez la magie du Bal Masqué Vénitien</h2>
+          <p class="section-subtitle">Plongez dans l'atmosphère du gala et découvrez les temps forts de l'édition 2025.</p>
+        </div>
+        <div class="media-frame">
+          <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Trailer officiel du Gala ENAC 2025" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Galerie -->
+    <section id="gallery" class="section section-ebony" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Galerie</span>
+          <h2 id="gallery-heading" class="section-title">Souvenirs des éditions précédentes</h2>
+          <p class="section-subtitle">Moments capturés, éclats de lumière et regards masqués : revivez l'émotion du Gala.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1520854221050-0f4caff449fb?auto=format&fit=crop&w=900&q=80" alt="Invités du gala portant des masques vénitiens">
+            <figcaption class="gallery-caption">Masques étincelants</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=crop&w=900&q=80" alt="Décor lumineux aux teintes dorées">
+            <figcaption class="gallery-caption">Ambiance dorée</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1462396881884-de2c07cb95ed?auto=format&fit=crop&w=900&q=80" alt="Cocktail raffiné servi au Gala ENAC">
+            <figcaption class="gallery-caption">Cocktail signature</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Musiciens jouant sur scène">
+            <figcaption class="gallery-caption">Concert live</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=900&q=80" alt="Feu d'artifice au-dessus d'un bâtiment">
+            <figcaption class="gallery-caption">Feu d'artifice</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1529692236671-f1dc28a6377c?auto=format&fit=crop&w=900&q=80" alt="DJ animant la fin de soirée">
+            <figcaption class="gallery-caption">Soirée dansante</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Line-up -->
+    <section id="lineup" class="section section-midnight" aria-labelledby="lineup-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Line-up</span>
+          <h2 id="lineup-heading" class="section-title">Artistes & DJs confirmés</h2>
+          <p class="section-subtitle">Une programmation éclectique entre musique live, électro et performances visuelles.</p>
+        </div>
+        <div class="lineup-grid">
+          <article class="lineup-card">
+            <img src="https://images.unsplash.com/photo-1525286116112-b59af11adad1?auto=format&fit=crop&w=700&q=80" alt="Portrait de la chanteuse Stella Aurora">
+            <div class="lineup-meta">
+              <h3>Stella Aurora</h3>
+              <p>Voix envoûtante et reprises jazz aux accents baroques.</p>
+            </div>
+          </article>
+          <article class="lineup-card">
+            <img src="https://images.unsplash.com/photo-1485579149621-3123dd979885?auto=format&fit=crop&w=700&q=80" alt="DJ Venezia en performance">
+            <div class="lineup-meta">
+              <h3>DJ Venezia</h3>
+              <p>Sets électro inspirés des nuits lagunaires, visuels immersifs.</p>
+            </div>
+          </article>
+          <article class="lineup-card">
+            <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=700&q=80" alt="Trio de musiciens électriques">
+            <div class="lineup-meta">
+              <h3>Trio Serenissima</h3>
+              <p>Cordes modernes, percussions lumineuses et tableaux vivants.</p>
+            </div>
+          </article>
+          <article class="lineup-card">
+            <img src="https://images.unsplash.com/photo-1506097425191-7ad538b29cef?auto=format&fit=crop&w=700&q=80" alt="Performeur sur scène avec un masque">
+            <div class="lineup-meta">
+              <h3>Compagnie Ombra</h3>
+              <p>Performances masquées et chorégraphies à la lueur des bougies.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Partenaires
+    <section id="partners" class="section section-velvet" aria-labelledby="partners-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Partenaires</span>
+          <h2 id="partners-heading" class="section-title">Ils illuminent le Gala</h2>
+          <p class="section-subtitle">Merci aux entreprises et institutions qui accompagnent l'édition 2025.</p>
+        </div>
+        <div class="partner-grid">
+          <a class="partner-card" href="https://www.airbus.com" target="_blank" rel="noopener noreferrer">
+            <span>Airbus</span>
+          </a>
+          <a class="partner-card" href="https://www.boulanger.com" target="_blank" rel="noopener noreferrer">
+            <span>Boulanger</span>
+          </a>
+          <a class="partner-card" href="https://www.enac.fr" target="_blank" rel="noopener noreferrer">
+            <span>ENAC</span>
+          </a>
+          <a class="partner-card" href="https://www.lydia-app.com" target="_blank" rel="noopener noreferrer">
+            <span>Lydia</span>
+          </a>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- 10. Contact (sans form) -->
+    <section id="contact" class="section section-midnight" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Contact</span>
+          <h2 id="contact-heading" class="section-title">Nous contacter</h2>
+          <p class="section-subtitle">Une question sur le Gala ? Besoin d'informations ? Contactez-nous.</p>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item contact-action" data-copy="contact@galaenac.fr" data-feedback="Adresse copiée !" role="button" tabindex="0" aria-label="Copier l'adresse email contact@galaenac.fr">
+            <div class="contact-icon">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <p class="contact-value">contact@galaenac.fr</p>
+              <span class="contact-feedback" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="contact-item contact-action" data-url="https://maps.app.goo.gl/HEZn9w9rsRUUwsjx5" role="link" tabindex="0" aria-label="Ouvrir l'adresse du Gala ENAC 2025 dans Google Maps">
+            <div class="contact-icon">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Adresse</h4>
+              <p class="contact-value">7 Avenue Édouard Belin, 31400 Toulouse</p>
+            </div>
+          </div>
+          <div class="contact-social">
+            <div class="social-icons">
+              <a href="https://www.instagram.com/galaenac" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="btn btn-gold social-btn">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+              <a href="https://www.facebook.com/share/1AJ6BSbDYH/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="btn btn-gold social-btn">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span>Facebook</span>
+              </a>
+              <a href="https://www.linkedin.com/company/gala-enac" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="btn btn-gold social-btn">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="container footer-grid">
+      <div class="footer-column">
+        <h4>Gala ENAC 2025</h4>
+        <p>Bal Masqué Vénitien — une expérience immersive au cœur de Toulouse.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Suivre l'événement</h4>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/galaenac" target="_blank" rel="noopener noreferrer" aria-label="Instagram">@galaenac</a>
+          <a href="https://www.facebook.com/share/1AJ6BSbDYH/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+          <a href="https://www.linkedin.com/company/gala-enac" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Informations</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.enac.fr" target="_blank" rel="noopener noreferrer">Site de l'ENAC</a></li>
+          <li><a href="mailto:contact@galaenac.fr">contact@galaenac.fr</a></li>
+          <li><a href="#contact">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <small>© 2025 Association Gala ENAC — Tous droits réservés.</small>
+    </div>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
