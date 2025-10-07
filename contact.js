@@ -225,9 +225,107 @@ export function initContactAnimations() {
     });
 }
 
+function createClipboardFallback(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'absolute';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    const selection = document.getSelection();
+    const selected = selection && selection.rangeCount > 0 ? selection.getRangeAt(0) : null;
+
+    textarea.select();
+    try {
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textarea);
+        if (selected) {
+            selection?.removeAllRanges();
+            selection?.addRange(selected);
+        }
+        return successful;
+    } catch (error) {
+        document.body.removeChild(textarea);
+        return false;
+    }
+}
+
+async function copyToClipboard(text) {
+    if (!text) return false;
+
+    if (navigator.clipboard && window.isSecureContext) {
+        try {
+            await navigator.clipboard.writeText(text);
+            return true;
+        } catch (error) {
+            return createClipboardFallback(text);
+        }
+    }
+
+    return createClipboardFallback(text);
+}
+
+function showContactFeedback(card, message, isError = false) {
+    const feedback = card.querySelector('.contact-feedback');
+    if (!feedback) return;
+
+    feedback.textContent = message;
+    card.classList.add('is-feedback');
+    card.classList.toggle('is-error', isError);
+
+    if (card._feedbackTimeout) {
+        window.clearTimeout(card._feedbackTimeout);
+    }
+
+    card._feedbackTimeout = window.setTimeout(() => {
+        card.classList.remove('is-feedback');
+        card.classList.remove('is-error');
+        feedback.textContent = '';
+    }, 2200);
+}
+
+function initContactActions() {
+    const cards = document.querySelectorAll('.contact-action');
+    if (!cards.length) return;
+
+    cards.forEach((card) => {
+        const copyValue = card.dataset.copy;
+        const url = card.dataset.url;
+        const feedbackMessage = card.dataset.feedback || '';
+
+        const triggerAction = async () => {
+            if (copyValue) {
+                const success = await copyToClipboard(copyValue);
+                if (feedbackMessage) {
+                    showContactFeedback(card, success ? feedbackMessage : 'Impossible de copier', !success);
+                }
+                return;
+            }
+
+            if (url) {
+                window.open(url, '_blank', 'noopener');
+            }
+        };
+
+        card.addEventListener('click', (event) => {
+            event.preventDefault();
+            triggerAction();
+        });
+
+        card.addEventListener('keydown', (event) => {
+            const key = event.key;
+            if (key === 'Enter' || key === ' ') {
+                event.preventDefault();
+                triggerAction();
+            }
+        });
+    });
+}
+
 // Initialize all contact functionality
 export function initContact() {
     initContactForm();
     initContactLinks();
     initContactAnimations();
+    initContactActions();
 }
