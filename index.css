@@ -283,7 +283,8 @@
   box-shadow: 0 18px 36px rgba(7, 5, 15, 0.4);
 }
 
-.media-frame iframe {
+.media-frame iframe,
+.media-frame video {
   width: 100%;
   height: 100%;
   border: none;
@@ -321,6 +322,32 @@
   padding: 1rem 1.3rem;
   background: linear-gradient(180deg, transparent 0%, rgba(9, 7, 18, 0.9) 100%);
   color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+}
+
+.program-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(1.4rem, 4vw, 2.4rem);
+  margin-bottom: clamp(2.2rem, 5vw, 3.6rem);
+}
+
+.program-option {
+  background: rgba(14, 10, 26, 0.88);
+  border-radius: 24px;
+  padding: clamp(1.8rem, 4vw, 2.4rem);
+  border: 1px solid rgba(229, 195, 123, 0.14);
+  box-shadow: 0 18px 34px rgba(7, 5, 15, 0.35);
+  display: grid;
+  gap: 0.85rem;
+}
+
+.program-option h3 {
+  font-size: 1.4rem;
+}
+
+.program-option p {
+  color: rgba(255, 255, 255, 0.68);
   font-size: 0.95rem;
 }
 
@@ -387,24 +414,37 @@
 .lineup-card {
   display: grid;
   gap: 1rem;
-  background: rgba(14, 10, 26, 0.85);
+  position: relative;
   border-radius: 24px;
   overflow: hidden;
-  border: 1px solid rgba(229, 195, 123, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 14px 30px rgba(7, 5, 15, 0.35);
+  background: rgba(42, 42, 48, 0.92);
+  border: 1px solid rgba(168, 168, 176, 0.28);
+  box-shadow: 0 16px 32px rgba(16, 16, 20, 0.45);
+  color: #d8d8d8;
 }
 
-.lineup-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(7, 5, 15, 0.45);
+.lineup-card::after {
+  content: "Révélés prochainement";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(22, 22, 26, 0.82);
+  color: rgba(232, 232, 236, 0.9);
+  font-size: clamp(0.9rem, 2.8vw, 1.5rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  z-index: 2;
 }
 
 .lineup-card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  filter: saturate(110%);
+  filter: grayscale(1) blur(6px);
+  transform: scale(1.05);
 }
 
 .lineup-meta {
@@ -414,10 +454,11 @@
 .lineup-meta h3 {
   margin-bottom: 0.4rem;
   font-size: 1.25rem;
+  color: #ededed;
 }
 
 .lineup-meta p {
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(220, 220, 224, 0.72);
   font-size: 0.95rem;
 }
 
@@ -482,6 +523,10 @@
   }
 
   .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-options {
     grid-template-columns: 1fr;
   }
 

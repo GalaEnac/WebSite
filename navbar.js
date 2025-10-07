@@ -69,7 +69,7 @@ export function initCountdown() {
   if (!countdownEl) return;
 
   // Ajuste la date/heure cible ici
-  const target = new Date('2025-11-21T18:00:00+03:00').getTime();
+  const target = new Date('2025-11-21T18:00:00+02:00').getTime();
 
   const pad = n => String(n).padStart(2,'0');
 

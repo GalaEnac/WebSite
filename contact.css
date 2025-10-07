@@ -78,6 +78,7 @@
   justify-content: center;
   width: 100%;
   text-align: center;
+  margin-top: 0;
 }
 
 .contact-social .social-icons {
@@ -173,8 +174,11 @@
 
 .social-icons {
   display: flex;
+  gap: 0.9rem;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
 .social-icon {
   width: 44px;

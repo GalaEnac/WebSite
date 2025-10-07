@@ -203,7 +203,7 @@ export function initContactLinks() {
 
 // Animation on scroll for contact elements
 export function initContactAnimations() {
-    const animateElements = document.querySelectorAll('.contact-item, .location-card, .contact-form-card');
+    const animateElements = document.querySelectorAll('.contact-item, .location-card, .contact-form-card, .contact-social');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
