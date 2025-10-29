@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^gala\-enac\.fr\,addon\-gala\-enac\.fr_rige7167\.odns\.fr$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.gala\-enac\.fr\,addon\-gala\-enac\.fr_rige7167\.odns\.fr$
+RewriteRule ^/?$ "https\:\/\/gala\-enac\.fr\/" [R=301,L]
+
