@@ -521,27 +521,10 @@
   color: #d8d8d8;
 }
 
-.lineup-card::after {
-  content: "Révélés prochainement";
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(22, 22, 26, 0.82);
-  color: rgba(232, 232, 236, 0.9);
-  font-size: clamp(0.9rem, 2.8vw, 1.5rem);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-align: center;
-  z-index: 2;
-}
-
 .lineup-card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  filter: grayscale(1) blur(6px);
   transform: scale(1.05);
 }
 
