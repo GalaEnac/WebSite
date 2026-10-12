@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 220">
+  <!-- Méduse constellée, même style que les raies de l'affiche 2026 -->
+  <defs>
+    <pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r=".75" fill="#dce7f2"/>
+      <circle cx="4" cy="3.8" r=".45" fill="#dce7f2" opacity=".7"/>
+    </pattern>
+    <path id="bell" d="M18 72 C16 34 40 10 60 10 C80 10 104 34 102 72 C96 68 90 75 83 71 C76 67 70 75 60 71 C50 75 44 67 37 71 C30 75 24 68 18 72 Z"/>
+  </defs>
+
+  <!-- Tentacules fines (lignes de courant) -->
+  <g fill="none" stroke="#7e98b3" stroke-width=".8" stroke-linecap="round" opacity=".9">
+    <path d="M26 72 C22 100 32 124 24 150 C18 170 26 188 22 206"/>
+    <path d="M44 72 C40 104 50 130 42 160 C36 182 44 198 40 216"/>
+    <path d="M76 72 C80 104 70 130 78 160 C84 182 76 198 80 216"/>
+    <path d="M94 72 C98 100 88 124 96 150 C102 170 94 188 98 206"/>
+  </g>
+
+  <!-- Bras oraux pailletés -->
+  <g fill="none" stroke="#dce7f2" stroke-width="2" stroke-linecap="round" stroke-dasharray="0 5">
+    <path d="M54 72 C48 96 62 116 52 140 C44 160 56 176 50 196"/>
+    <path d="M66 72 C72 96 58 116 68 140 C76 160 64 176 70 196"/>
+    <path d="M60 72 C60 100 60 130 60 170" opacity=".7"/>
+  </g>
+
+  <!-- Ombrelle -->
+  <use href="#bell" fill="#1d2738"/>
+  <use href="#bell" fill="url(#dots)"/>
+  <use href="#bell" fill="none" stroke="#c4d3e2" stroke-width=".8" opacity=".85"/>
+  <path d="M30 56 C40 40 80 40 90 56" fill="none" stroke="#c4d3e2" stroke-width=".6" opacity=".5"/>
+</svg>

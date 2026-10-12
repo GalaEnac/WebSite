@@ -6,16 +6,15 @@
   position: relative;
   padding: clamp(3.5rem, 6vw, 6rem) 0;
   overflow: hidden;
-  color: var(--color-ivory);
-  background: linear-gradient(180deg, rgba(11, 10, 28, 0.95) 0%, rgba(7, 6, 18, 0.98) 100%);
+  color: var(--pearl);
+  background: linear-gradient(180deg, rgba(var(--night-rgb), 0.5) 0%, rgba(var(--abyss-rgb), 0.6) 100%);
 }
 
 .contact::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 15% 20%, rgba(229, 195, 123, 0.12), transparent 55%),
-              radial-gradient(circle at 85% 10%, rgba(156, 108, 240, 0.08), transparent 50%);
+  background: radial-gradient(ellipse 60% 45% at 50% 0%, rgba(var(--glow-rgb), 0.08), transparent 70%);
   opacity: 0.55;
   pointer-events: none;
 }
@@ -42,12 +41,12 @@
 
 .contact .section-header {
   backdrop-filter: blur(16px);
-  background: rgba(12, 10, 26, 0.8);
+  background: var(--surface-strong);
   border-radius: 28px;
   padding: clamp(1.8rem, 4vw, 2.4rem);
-  border: 1px solid rgba(229, 195, 123, 0.18);
+  border: 1px solid var(--border);
   margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
-  box-shadow: 0 24px 48px rgba(6, 4, 15, 0.4);
+  box-shadow: var(--shadow-soft);
 }
 
 .contact-content {
@@ -65,11 +64,11 @@
 .contact-item,
 .social-media,
 .contact-form-card {
-  background: rgba(12, 10, 26, 0.85);
+  background: var(--surface-strong);
   border-radius: 24px;
   padding: clamp(1.6rem, 3.5vw, 2.2rem);
-  border: 1px solid rgba(229, 195, 123, 0.14);
-  box-shadow: 0 18px 38px rgba(6, 4, 15, 0.32);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
@@ -90,8 +89,8 @@
 .social-media:hover,
 .contact-form-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 48px rgba(6, 4, 15, 0.42);
-  border-color: rgba(229, 195, 123, 0.3);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+  border-color: var(--border-strong);
 }
 
 .contact-link {
@@ -105,8 +104,9 @@
   width: 48px;
   height: 48px;
   border-radius: 18px;
-  background: linear-gradient(135deg, rgba(229, 195, 123, 0.3), rgba(156, 108, 240, 0.25));
-  color: var(--color-soft-gold);
+  background: radial-gradient(circle at 35% 30%, rgba(var(--silver-rgb), 0.24), rgba(var(--silver-rgb), 0.06) 70%);
+  border: 1px solid rgba(var(--silver-rgb), 0.2);
+  color: var(--pearl);
   font-size: 1.3rem;
   flex-shrink: 0;
 }
@@ -125,7 +125,7 @@
 }
 
 .contact-text p {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text);
   margin: 0;
   font-size: 0.95rem;
 }
@@ -138,13 +138,13 @@
 }
 
 .contact-action:focus-visible {
-  outline: 2px solid var(--color-soft-gold);
+  outline: 2px solid var(--pearl);
   outline-offset: 4px;
 }
 
 .contact-value {
-  color: var(--color-ivory);
-  font-weight: 600;
+  color: var(--pearl);
+  font-weight: 500;
   letter-spacing: 0.03em;
 }
 
@@ -154,7 +154,7 @@
   margin-top: 0.4rem;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
-  color: var(--color-soft-gold);
+  color: var(--silver);
   opacity: 0;
   transition: opacity 0.25s ease;
 }
@@ -164,7 +164,7 @@
 }
 
 .contact-action.is-error .contact-feedback {
-  color: #ff9bb0;
+  color: var(--danger);
 }
 
 .social-media h4 {
@@ -186,15 +186,15 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(229, 195, 123, 0.18);
-  color: var(--color-soft-gold);
+  background: rgba(var(--silver-rgb), 0.12);
+  color: var(--pearl);
   transition: transform 0.25s ease, background 0.25s ease;
 }
 
 .social-icon:hover,
 .social-icon:focus-visible {
   transform: translateY(-4px);
-  background: rgba(229, 195, 123, 0.32);
+  background: rgba(var(--silver-rgb), 0.24);
 }
 
 .contact-form-card h3 {
@@ -217,7 +217,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-soft-gold);
+  color: var(--silver);
 }
 
 .form-group input,
@@ -226,9 +226,9 @@
   width: 100%;
   padding: 0.85rem 1rem;
   border-radius: 14px;
-  border: 1px solid rgba(229, 195, 123, 0.18);
-  background: rgba(8, 6, 16, 0.85);
-  color: var(--color-ivory);
+  border: 1px solid var(--border-strong);
+  background: rgba(var(--abyss-rgb), 0.85);
+  color: var(--pearl);
   font-size: 0.95rem;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
   font-family: inherit;
@@ -243,8 +243,8 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: rgba(229, 195, 123, 0.6);
-  box-shadow: 0 0 0 3px rgba(229, 195, 123, 0.2);
+  border-color: rgba(var(--silver-rgb), 0.65);
+  box-shadow: 0 0 0 3px rgba(var(--glow-rgb), 0.2);
 }
 
 .form-message {
@@ -253,9 +253,9 @@
   border-radius: 14px;
   font-size: 0.9rem;
   text-align: center;
-  background: rgba(8, 6, 16, 0.82);
-  border: 1px solid rgba(229, 195, 123, 0.18);
-  box-shadow: 0 12px 24px rgba(6, 4, 15, 0.3);
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
 }
 
 .form-message.success {
@@ -278,7 +278,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(11, 10, 28, 1) 0%, rgba(11, 10, 28, 0.25) 45%, rgba(7, 6, 18, 0.92) 100%);
+  background: linear-gradient(180deg, var(--night) 0%, rgba(var(--night-rgb), 0.25) 45%, rgba(var(--abyss-rgb), 0.92) 100%);
   pointer-events: none;
 }
 

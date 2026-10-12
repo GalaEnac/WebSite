@@ -1,24 +1,66 @@
 /* -------------------------------------------------------------------------- */
-/* Palette et variables                                                         */
+/* Palette et variables — « Nuit sous les mers » (d'après l'affiche 2026)       */
 /* -------------------------------------------------------------------------- */
 
 :root {
-  --color-midnight: #0b0a1c;
-  --color-velvet: #1c1535;
-  --color-ebony: #120f24;
-  --color-ink: #0a0818;
-  --color-plum: #342454;
-  --color-gold: #e5c37b;
-  --color-soft-gold: #f3d8a4;
-  --color-ivory: #f8f4ed;
-  --color-mist: rgba(255, 255, 255, 0.65);
-  --color-muted: rgba(255, 255, 255, 0.55);
-  --gradient-velvet: radial-gradient(circle at 20% 20%, rgba(229, 195, 123, 0.08), transparent 60%),
-                     radial-gradient(circle at 80% 0%, rgba(156, 108, 240, 0.12), transparent 55%),
-                     linear-gradient(180deg, #1d1636 0%, #0b0a1c 100%);
-  --shadow-soft: 0 18px 40px rgba(6, 4, 15, 0.35);
-  --shadow-card: 0 16px 30px rgba(10, 8, 24, 0.45);
-  --shadow-border: rgba(229, 195, 123, 0.25);
+  /* Fonds : du ciel nocturne aux abysses */
+  --abyss: #050d17;
+  --night: #081726;
+  --deep: #0d2032;
+  --tide: #16283b;
+
+  /* Lignes de courant et accents argentés */
+  --current: #3a5068;
+  --steel: #7e98b3;
+  --silver: #c4d3e2;
+  --pearl: #eef3f8;
+  --glow: #9fc3e6;
+
+  /* Triplets RGB pour les transparences : rgba(var(--silver-rgb), .2) */
+  --abyss-rgb: 5, 13, 23;
+  --night-rgb: 8, 23, 38;
+  --deep-rgb: 13, 32, 50;
+  --tide-rgb: 22, 40, 59;
+  --silver-rgb: 196, 211, 226;
+  --pearl-rgb: 238, 243, 248;
+  --glow-rgb: 159, 195, 230;
+
+  /* Texte */
+  --text: #b6c5d5;
+  --text-muted: #8fa4ba;
+  --text-strong: var(--pearl);
+  --danger: #ff9bb0;
+
+  /* Surfaces et bordures */
+  --surface: rgba(var(--tide-rgb), 0.72);
+  --surface-strong: rgba(var(--deep-rgb), 0.9);
+  --border: rgba(var(--silver-rgb), 0.12);
+  --border-strong: rgba(var(--silver-rgb), 0.28);
+
+  /* Boutons nacrés */
+  --btn-bg: linear-gradient(135deg, #f4f8fc 0%, #c4d3e2 55%, #9fb6cc 100%);
+  --btn-bg-hover: linear-gradient(135deg, #ffffff 0%, #d6e2ee 55%, #afc4d8 100%);
+  --btn-text: #061322;
+
+  /* Ombres */
+  --shadow-soft: 0 18px 40px rgba(var(--abyss-rgb), 0.45);
+  --shadow-card: 0 16px 34px rgba(var(--abyss-rgb), 0.55);
+  --shadow-glow: 0 0 22px rgba(var(--glow-rgb), 0.25);
+
+  /* Typographies */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Logo : or d'origine -> blanc argenté (sans modifier le fichier PNG) */
+  --logo-filter: grayscale(1) brightness(2.3) contrast(0.95) drop-shadow(0 0 10px rgba(var(--glow-rgb), 0.35));
+
+  /* Fond général : ciel étoilé qui se fond dans l'océan */
+  --gradient-ocean: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(var(--glow-rgb), 0.07), transparent 70%),
+                    linear-gradient(180deg, #06101c 0%, #071624 35%, #0a1c2d 70%, #061524 100%);
+
+  /* Visibilité des créatures de fond (raies, méduse) */
+  --creature-opacity: 0.3;
+
   --nav-h: 96px;
 }
 
@@ -34,22 +76,28 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--abyss);
 }
 
 body {
-  font-family: 'Poppins', system-ui, sans-serif;
-  background: var(--gradient-velvet);
-  color: var(--color-mist);
-  line-height: 1.65;
+  font-family: var(--font-body);
+  font-weight: 400;
+  background: var(--gradient-ocean);
+  background-color: var(--night);
+  color: var(--text);
+  line-height: 1.7;
   font-size: 16px;
   min-height: 100vh;
   padding-top: var(--nav-h);
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Playfair Display', 'Times New Roman', serif;
-  color: var(--color-ivory);
-  line-height: 1.2;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-strong);
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  font-variant-numeric: lining-nums;
 }
 
 a {
@@ -68,6 +116,91 @@ main {
   z-index: 1;
 }
 
+::selection {
+  background: rgba(var(--glow-rgb), 0.35);
+  color: var(--pearl);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Décor de fond : étoiles, scintillements et bulles (fixe, derrière tout)     */
+/* -------------------------------------------------------------------------- */
+
+.sea-decor {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sea-decor .stars {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  /* Les étoiles s'estompent vers le bas, comme le ciel de l'affiche qui plonge dans la mer */
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.55) 55%, rgba(0, 0, 0, 0.15) 100%);
+  mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.55) 55%, rgba(0, 0, 0, 0.15) 100%);
+}
+
+.sea-decor .stars-a {
+  background-image: url('assets/decor/stars-a.svg');
+  background-size: 480px 480px;
+  opacity: 0.4;
+}
+
+.sea-decor .stars-b {
+  background-image: url('assets/decor/stars-b.svg');
+  background-size: 720px 720px;
+  background-position: 130px 60px;
+  opacity: 0.35;
+  animation: twinkle 7s ease-in-out infinite alternate;
+}
+
+.sea-decor .sparkle {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--s, 14px);
+  height: var(--s, 14px);
+  background: url('assets/decor/sparkle.svg') center / contain no-repeat;
+  opacity: 0.5;
+  animation: sparkle 5s ease-in-out var(--d, 0s) infinite;
+}
+
+.sea-decor .bubble {
+  position: absolute;
+  bottom: -40px;
+  left: var(--x);
+  width: var(--s, 8px);
+  height: var(--s, 8px);
+  border-radius: 50%;
+  border: 1px solid rgba(var(--silver-rgb), 0.45);
+  background:
+    radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.7) 0 9%, transparent 15%),
+    radial-gradient(circle at 50% 50%, transparent 55%, rgba(var(--glow-rgb), 0.18) 100%);
+  box-shadow: inset 0 0 calc(var(--s, 8px) / 4) rgba(var(--glow-rgb), 0.25);
+  opacity: 0;
+  animation: bubble-rise var(--t, 24s) linear var(--d, 0s) infinite;
+}
+
+@keyframes twinkle {
+  0%   { opacity: 0.12; }
+  100% { opacity: 0.45; }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.75) rotate(0deg); }
+  50%      { opacity: 0.6; transform: scale(1) rotate(12deg); }
+}
+
+@keyframes bubble-rise {
+  0%   { transform: translate3d(0, 0, 0);                              opacity: 0; }
+  10%  { opacity: 0.4; }
+  50%  { transform: translate3d(var(--sway, 18px), -55vh, 0); }
+  85%  { opacity: 0.3; }
+  100% { transform: translate3d(0, -115vh, 0);                         opacity: 0; }
+}
+
 /* -------------------------------------------------------------------------- */
 /* Layouts de base                                                             */
 /* -------------------------------------------------------------------------- */
@@ -82,14 +215,14 @@ main {
   position: relative;
 }
 
+/* Halo de lumière venant de la surface */
 .section::before {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.45;
+  opacity: 0.6;
   pointer-events: none;
-  background-image: radial-gradient(circle at 20% 20%, rgba(229, 195, 123, 0.09), transparent 60%),
-                    radial-gradient(circle at 80% 0%, rgba(156, 108, 240, 0.1), transparent 55%);
+  background-image: radial-gradient(ellipse 60% 45% at 50% 0%, rgba(var(--glow-rgb), 0.06), transparent 70%);
 }
 
 .section > * {
@@ -97,16 +230,82 @@ main {
   z-index: 1;
 }
 
+/* Sections semi-transparentes : le décor de fond reste visible en filigrane */
 .section-velvet {
-  background: linear-gradient(180deg, rgba(28, 21, 53, 0.96) 0%, rgba(12, 10, 28, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(var(--deep-rgb), 0.55) 0%, rgba(var(--night-rgb), 0.35) 100%);
 }
 
 .section-midnight {
-  background: linear-gradient(180deg, rgba(15, 12, 32, 0.96) 0%, rgba(10, 8, 24, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(var(--night-rgb), 0.3) 0%, rgba(var(--abyss-rgb), 0.35) 100%);
 }
 
 .section-ebony {
-  background: linear-gradient(180deg, rgba(13, 11, 24, 0.96) 0%, rgba(10, 8, 24, 0.98) 100%);
+  background: linear-gradient(180deg, rgba(var(--abyss-rgb), 0.45) 0%, rgba(var(--night-rgb), 0.4) 100%);
+}
+
+/* Vague à paillettes en bas de certaines sections (motif de l'affiche) */
+.section-velvet::after,
+.section-wave::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  background: url('assets/decor/wave.svg') center bottom / 1440px 120px repeat-x;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Créatures constellées (raies manta, méduse) en arrière-plan d'une section */
+.has-creatures {
+  overflow: hidden;
+  overflow: clip; /* coupe les créatures sans casser position: sticky à l'intérieur */
+}
+
+.has-creatures > .creature {
+  position: absolute;
+  z-index: 0;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: var(--creature-opacity);
+  filter: drop-shadow(0 0 14px rgba(var(--glow-rgb), 0.35));
+  pointer-events: none;
+}
+
+.manta {
+  width: clamp(220px, 32vw, 440px);
+  aspect-ratio: 200 / 150;
+  background-image: url('assets/decor/manta.svg');
+}
+
+.manta-right {
+  top: 6%;
+  right: -5%;
+  transform: rotate(-24deg);
+}
+
+.manta-left {
+  bottom: 8%;
+  left: -6%;
+  transform: rotate(28deg) scaleX(-1);
+}
+
+.jellyfish {
+  width: clamp(110px, 13vw, 180px);
+  aspect-ratio: 120 / 220;
+  background-image: url('assets/decor/jellyfish.svg');
+  top: 50%;
+  right: 6%;
+  transform: translateY(-50%) rotate(8deg);
+  animation: jelly-float 9s ease-in-out infinite;
+}
+
+@keyframes jelly-float {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0 -18px; }
 }
 
 .section-header {
@@ -115,24 +314,42 @@ main {
 }
 
 .section-kicker {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8em;
   letter-spacing: 0.4em;
   text-transform: uppercase;
   font-size: 0.75rem;
-  color: var(--color-soft-gold);
+  font-weight: 500;
+  color: var(--silver);
   margin-bottom: 0.8rem;
 }
 
+/* Petite étoile à quatre branches de part et d'autre du kicker */
+.section-kicker::before,
+.section-kicker::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background: url('assets/decor/sparkle.svg') center / contain no-repeat;
+  opacity: 0.8;
+}
+
 .section-title {
-  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
   margin-bottom: 1rem;
 }
 
 .section-subtitle {
   font-size: 1.05rem;
-  color: var(--color-muted);
+  font-weight: 300;
+  color: var(--text-muted);
   max-width: min(620px, 90vw);
   margin-inline: auto;
+}
+
+.text-accent {
+  color: var(--silver);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -146,45 +363,45 @@ main {
   gap: 0.5rem;
   padding: 0.85rem 1.9rem;
   border-radius: 999px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   cursor: pointer;
   border: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #f7dba7 0%, #d7af5a 100%);
-  color: #20150b;
-  box-shadow: 0 12px 24px rgba(229, 195, 123, 0.28);
+.btn-primary,
+.btn-gold {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  box-shadow: 0 10px 24px rgba(var(--abyss-rgb), 0.5), var(--shadow-glow);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-gold:hover {
+  background: var(--btn-bg-hover);
   transform: translateY(-3px);
-  box-shadow: 0 16px 32px rgba(229, 195, 123, 0.35);
+  box-shadow: 0 14px 30px rgba(var(--abyss-rgb), 0.55), 0 0 30px rgba(var(--glow-rgb), 0.4);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--color-soft-gold);
-  border: 1px solid rgba(229, 195, 123, 0.6);
-  box-shadow: inset 0 0 0 1px rgba(229, 195, 123, 0.35);
+  color: var(--silver);
+  border: 1px solid var(--border-strong);
 }
 
 .btn-outline:hover {
-  background: rgba(229, 195, 123, 0.15);
+  background: rgba(var(--silver-rgb), 0.1);
   transform: translateY(-3px);
 }
 
-.btn-gold {
-  background: linear-gradient(135deg, #f3d8a4 0%, #e1b75a 100%);
-  color: #1d1208;
-  box-shadow: 0 16px 28px rgba(227, 188, 96, 0.25);
-}
-
-.btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 36px rgba(227, 188, 96, 0.32);
+.btn[disabled],
+.btn.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .btn-full {
@@ -192,8 +409,8 @@ main {
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--color-soft-gold);
-  outline-offset: 2px;
+  outline: 2px solid var(--pearl);
+  outline-offset: 3px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -224,10 +441,24 @@ main {
 /* -------------------------------------------------------------------------- */
 
 .site-footer {
-  background: rgba(8, 6, 18, 0.95);
-  border-top: 1px solid rgba(229, 195, 123, 0.15);
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(var(--abyss-rgb), 0.8) 0%, var(--abyss) 100%);
+  border-top: 1px solid var(--border);
   padding: 3.5rem 0 2rem;
   margin-top: 4rem;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 120px;
+  background: url('assets/decor/wave.svg') center bottom / 1440px 120px repeat-x;
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 .footer-grid {
@@ -237,14 +468,14 @@ main {
 }
 
 .footer-column h4 {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin-bottom: 0.85rem;
 }
 
 .footer-column p,
 .footer-column a,
 .footer-column li {
-  color: var(--color-muted);
+  color: var(--text-muted);
   font-size: 0.95rem;
 }
 
@@ -262,14 +493,14 @@ main {
 
 .footer-social a:hover,
 .footer-links a:hover {
-  color: var(--color-soft-gold);
+  color: var(--pearl);
 }
 
 .footer-meta {
   margin-top: 2.5rem;
   text-align: center;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(var(--silver-rgb), 0.5);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -291,16 +522,34 @@ main {
     padding: 3rem 0;
   }
 
-  .section::before {
-    opacity: 0.35;
-  }
-
   .section-header {
     margin-bottom: 2.5rem;
   }
 
   .footer-grid {
     gap: 2rem;
+  }
+
+  .section-velvet::after,
+  .section-wave::after,
+  .site-footer::before {
+    height: 80px;
+    background-size: 960px 80px;
+  }
+
+  :root {
+    --creature-opacity: 0.18;
+  }
+
+  .jellyfish {
+    top: 1.5rem;
+    right: -1.5rem;
+    transform: rotate(8deg);
+  }
+
+  /* Moins de bulles sur petit écran */
+  .sea-decor .bubbles .bubble:nth-child(n + 7) {
+    display: none;
   }
 }
 
@@ -310,7 +559,7 @@ main {
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .section-kicker {
@@ -319,5 +568,29 @@ main {
 
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Accessibilité : pas d'animation si l'utilisateur le demande                 */
+/* -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .sea-decor .stars-b,
+  .sea-decor .sparkle,
+  .jellyfish {
+    animation: none;
+  }
+
+  .sea-decor .bubble {
+    display: none;
+  }
+
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
   }
 }

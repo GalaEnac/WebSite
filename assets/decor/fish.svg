@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 24">
+  <!-- Petit poisson constellé (même style que les raies et la méduse) -->
+  <path d="M4 12 C10 3 26 2 36 12 C26 22 10 21 4 12 Z" fill="#1d2738" stroke="#c4d3e2" stroke-width="1"/>
+  <path d="M35 12 L46 4 L43 12 L46 20 Z" fill="#1d2738" stroke="#c4d3e2" stroke-width="1" stroke-linejoin="round"/>
+  <g fill="#dce7f2"><circle cx="12" cy="10.5" r="1.4"/><circle cx="18" cy="9" r=".6"/><circle cx="22" cy="12" r=".6"/><circle cx="26" cy="10" r=".6"/><circle cx="20" cy="15" r=".5"/><circle cx="27" cy="14" r=".5"/></g>
+  <path d="M15 6 C17 9 17 15 15 18" fill="none" stroke="#c4d3e2" stroke-width=".7" opacity=".7"/>
+</svg>

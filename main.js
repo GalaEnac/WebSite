@@ -2,6 +2,8 @@
 
 import { initNavbar, initCountdown } from './navbar.js';
 import { initContact } from './contact.js';
+import { initGallery } from './gallery.js';
+import { initProgram } from './program.js';
 
 async function loadContactSection() {
   try {
@@ -79,10 +81,27 @@ function initSmoothAnchors() {
   });
 }
 
+function initCalendarMenu() {
+  const menu = document.querySelector('.cal-menu');
+  if (!menu) return;
+  document.addEventListener('click', (event) => {
+    if (menu.open && !menu.contains(event.target)) menu.open = false;
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.open) {
+      menu.open = false;
+      menu.querySelector('summary').focus();
+    }
+  });
+}
+
 async function init() {
   initNavbar();
   initCountdown();
   initSmoothAnchors();
+  initGallery();
+  initProgram();
+  initCalendarMenu();
   initVolunteerForm();
 
   await loadContactSection();

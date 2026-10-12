@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <!-- Raie manta constellée, d'après l'affiche 2026 -->
+  <defs>
+    <pattern id="dots" width="5" height="5" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r=".75" fill="#dce7f2"/>
+      <circle cx="4" cy="3.8" r=".45" fill="#dce7f2" opacity=".7"/>
+    </pattern>
+    <path id="body" d="M100 34 C90 34 82 39 76 46 C58 50 30 54 2 78 C28 76 56 82 76 96 C86 104 94 110 100 110 C106 110 114 104 124 96 C144 82 172 76 198 78 C170 54 142 50 124 46 C118 39 110 34 100 34 Z"/>
+  </defs>
+  <use href="#body" fill="#1d2738"/>
+  <use href="#body" fill="url(#dots)"/>
+  <use href="#body" fill="none" stroke="#c4d3e2" stroke-width=".8" opacity=".8"/>
+  <path d="M93 36 C88 33 87 28 91 25 M107 36 C112 33 113 28 109 25" fill="none" stroke="#c4d3e2" stroke-width="2" stroke-linecap="round"/>
+  <path d="M100 110 L100 148" stroke="#c4d3e2" stroke-width=".9" stroke-linecap="round"/>
+</svg>

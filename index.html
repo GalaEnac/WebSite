@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gala ENAC 2025 — Bal Masqué Vénitien à l'ENAC Toulouse. Informations, programme, bénévoles, partenaires et contact.">
-  <title>Gala ENAC 2025 — Bal Masqué Vénitien</title>
+  <meta name="description" content="Gala ENAC 2026 — Nuit sous les mers à l'ENAC Toulouse. Informations, programme, bénévoles, partenaires et contact.">
+  <title>Gala ENAC 2026 — Nuit sous les mers</title>
   <link rel="icon" type="image/png" href="./assets/img/logo_gala_2025.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="contact.css">
@@ -16,27 +16,52 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  <!-- Décor de fond « Nuit sous les mers » : purement décoratif -->
+  <div class="sea-decor" aria-hidden="true">
+    <div class="stars stars-a"></div>
+    <div class="stars stars-b"></div>
+    <span class="sparkle" style="--x:18%; --y:14%; --s:16px; --d:0s"></span>
+    <span class="sparkle" style="--x:84%; --y:9%; --s:12px; --d:-1.8s"></span>
+    <span class="sparkle" style="--x:62%; --y:34%; --s:14px; --d:-3.2s"></span>
+    <span class="sparkle" style="--x:8%; --y:52%; --s:10px; --d:-2.4s"></span>
+    <span class="sparkle" style="--x:91%; --y:61%; --s:13px; --d:-4.1s"></span>
+    <div class="bubbles">
+      <span class="bubble" style="--x:6%; --s:14px; --t:30s; --d:-4s; --sway:16px"></span>
+      <span class="bubble" style="--x:80%; --s:26px; --t:40s; --d:-13s; --sway:-20px"></span>
+      <span class="bubble" style="--x:34%; --s:10px; --t:27s; --d:-22s; --sway:16px"></span>
+      <span class="bubble" style="--x:95%; --s:7px; --t:22s; --d:-11s; --sway:-8px"></span>
+      <span class="bubble" style="--x:47%; --s:18px; --t:34s; --d:-9s; --sway:20px"></span>
+      <span class="bubble" style="--x:22%; --s:6px; --t:21s; --d:-15s; --sway:-10px"></span>
+      <span class="bubble" style="--x:13%; --s:24px; --t:38s; --d:-27s; --sway:22px"></span>
+      <span class="bubble" style="--x:58%; --s:5px; --t:19s; --d:-6s; --sway:-12px"></span>
+      <span class="bubble" style="--x:71%; --s:12px; --t:26s; --d:-19s; --sway:-16px"></span>
+      <span class="bubble" style="--x:88%; --s:9px; --t:28s; --d:-2s; --sway:12px"></span>
+      <span class="bubble" style="--x:40%; --s:8px; --t:24s; --d:-31s; --sway:10px"></span>
+      <span class="bubble" style="--x:64%; --s:20px; --t:36s; --d:-2s; --sway:18px"></span>
+    </div>
+  </div>
   <div id="nav-sentinel" aria-hidden="true"></div>
 
   <nav class="navbar" aria-label="Navigation principale">
     <div class="nav-container container">
       <div id="nav-menu-left" class="nav-menu nav-menu-left" role="navigation" aria-label="Navigation gauche">
         <ul class="nav-list nav-list-left">
-          <!-- <li class="nav-item"><a class="nav-link" href="#lineup">Line-up</a></li> -->
           <li class="nav-item"><a class="nav-link" href="#program">Programme</a></li>
           <li class="nav-item"><a class="nav-link" href="#support">Soutenir</a></li>
-          <li class="nav-item"><a class="nav-link" href="#lineup">Line-up</a></li>
+          <li class="nav-item"><a class="nav-link" href="#aftermovie">Aftermovie</a></li>
+          <!-- Line-up masqué pour l'instant : remettre ce lien et retirer « hidden » sur la section #lineup -->
+          <!-- <li class="nav-item"><a class="nav-link" href="#lineup">Line-up</a></li> -->
         </ul>
       </div>
       <div class="nav-logo nav-center">
         <a href="#hero-video" class="nav-link nav-logo-link" aria-label="Retour à l'accueil">
-          <img src="./assets/img/logo_gala_2025.png" alt="Logo du Gala ENAC 2025">
+          <img src="./assets/img/logo_gala_2025.png" alt="Logo du Gala ENAC">
         </a>
       </div>
       <div id="nav-menu-right" class="nav-menu nav-menu-right" role="navigation" aria-label="Navigation droite">
         <ul class="nav-list nav-list-right">
-          <li class="nav-item"><a class="nav-link" href="#trailer">Trailer</a></li>
           <li class="nav-item"><a class="nav-link" href="#gallery">Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="#partners">Partenaires</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -48,22 +73,30 @@
 
   <main>
     <!-- 1. Héro video -->
-    <section id="hero-video" class="hero-video" aria-label="Gala ENAC 2025">
-      <video class="hero-bg" autoplay muted loop playsinline poster="./assets/img/hero-poster.jpg">
-        <source src="./assets/video/hero.mp4" type="video/mp4">
+    <section id="hero-video" class="hero-video" aria-label="Gala ENAC 2026">
+      <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="./assets/img/hero-trailer-poster.jpg">
+        <source src="./assets/video/hero-trailer-2026.mp4" type="video/mp4">
       </video>
       <div class="hero-overlay"></div>
       <div class="hero-content container">
         <div class="hero-intro">
-          <span class="hero-kicker">Gala ENAC 2025</span>
-          <h1 class="hero-title">Bal Masqué Vénitien</h1>
+          <span class="hero-kicker">Gala ENAC 2026</span>
+          <h1 class="hero-title">Nuit sous les mers</h1>
           <p class="hero-tagline">Une soirée de prestige mêlant tradition, élégance et fête.</p>
           <ul class="hero-meta">
-            <li><i class="fa-regular fa-calendar" aria-hidden="true"></i><span>Vendredi 21 novembre 2025</span></li>
-            <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>École Nationale de l'Aviation Civile — Toulouse</span></li>
+            <li class="hero-date">
+              <details class="cal-menu">
+                <summary><i class="fa-regular fa-calendar" aria-hidden="true"></i><span>Samedi 21 novembre 2026</span><i class="fa-solid fa-calendar-plus cal-hint" aria-hidden="true"></i><span class="sr-only"> — ajouter à mon agenda</span></summary>
+                <div class="cal-options">
+                  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Gala%20ENAC%202026%20%E2%80%94%20Nuit%20sous%20les%20mers&amp;dates=20261121T184500/20261122T043000&amp;ctz=Europe/Paris&amp;location=ENAC%2C%207%20Avenue%20%C3%89douard%20Belin%2C%2031400%20Toulouse&amp;details=Gala%20ENAC%202026%20%E2%80%94%20https%3A%2F%2Fgala-enac.fr" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google" aria-hidden="true"></i> Google Agenda</a>
+                  <a href="assets/gala-enac-2026.ics" download><i class="fa-brands fa-apple" aria-hidden="true"></i> Apple / Outlook (.ics)</a>
+                </div>
+              </details>
+            </li>
+            <li><a class="hero-place" href="https://maps.app.goo.gl/HEZn9w9rsRUUwsjx5" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Ecole Nationale de l'Aviation Civile — Toulouse</span><i class="fa-solid fa-arrow-up-right-from-square place-hint" aria-hidden="true"></i></a></li>
           </ul>
           <div class="hero-cta">
-            <a class="btn btn-primary" href="https://www.billetweb.fr/gala-enac-2025" target="_blank" rel="noopener noreferrer">Réserver ma place</a>
+            <a class="btn btn-primary" disabled aria-disabled="true">La billetterie arrive !</a>
           </div>
         </div>
       </div>
@@ -76,18 +109,19 @@
     </section> -->
 
     <!-- 2. Immersion -->
-    <section id="hero" class="section section-velvet hero-overview" aria-labelledby="hero-heading">
+    <section id="hero" class="section section-velvet hero-overview has-creatures" aria-labelledby="hero-heading">
+      <div class="creature manta manta-right" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header">
           <span class="section-kicker">Immersion</span>
-          <h2 id="hero-heading" class="section-title">Une nuit d'élégance et de mystère</h2>
-          <p class="section-subtitle">Costumes somptueux, musique envoûtante et scénographie lumineuse : le Gala ENAC 2025 vous plonge au cœur des palais vénitiens.</p>
+          <h2 id="hero-heading" class="section-title">Une sérénade scintillante de bleu</h2>
+          <p class="section-subtitle">Costumes somptueux, musique envoûtante et scénographie lumineuse : le Gala ENAC 2026 vous plonge littéralement dans une ambiance sous marine.</p>
         </div>
         <div class="highlight-grid">
           <article class="highlight-card">
-            <span class="highlight-icon"><i class="fa-solid fa-masks-theater" aria-hidden="true"></i></span>
-            <h3>Masques vénitiens</h3>
-            <p>Plongez dans l'atmosphère mystérieuse des carnavals italiens avec votre plus beau masque vénitien.</p>
+            <span class="highlight-icon"><i class="fa-solid fa-water" aria-hidden="true"></i></span>
+            <h3>Voyage sous les mers</h3>
+            <p>Plongez dans une nuit étoilée où ciel et océan se confondent, entre raies manta et éclats de nacre.</p>
           </article>
           <article class="highlight-card">
             <span class="highlight-icon"><i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i></span>
@@ -109,7 +143,7 @@
         <div class="section-header">
           <span class="section-kicker">Bénévoles</span>
           <h2 id="volunteer-heading" class="section-title">Rejoins l'équipe du Gala</h2>
-          <p class="section-subtitle">Ta place est offerte en échange de ton aide. Ensemble, faisons rayonner le Bal Masqué Vénitien.</p>
+          <p class="section-subtitle">Ta place est offerte en échange de ton aide. Ensemble, faisons briller la Nuit sous les mers.</p>
         </div>
         <div class="volunteer-card">
           <div class="volunteer-content">
@@ -121,17 +155,18 @@
             </ul>
             <p><strong>Ta place est offerte</strong> en échange de ton engagement sur les créneaux définis avant et pendant la soirée.</p>
             <br>
-            <p style="text-align: center; margin-bottom: 1rem; color: #d4af37; font-weight: 500;">
-              <i class="fa-solid fa-check-circle" aria-hidden="true"></i> Les inscriptions bénévoles sont complètes. Merci pour votre enthousiasme !
+            <p class="volunteer-status">
+              <!--<i class="fa-solid fa-check-circle" aria-hidden="true"></i> Les inscriptions bénévoles sont complètes. Merci pour votre enthousiasme !-->
             </p>
-            <button class="btn btn-primary btn-full" disabled style="opacity: 0.5; cursor: not-allowed;">S'inscrire comme bénévole</button>
+            <a class="btn btn-primary btn-full" href="https://docs.google.com/forms/d/e/1FAIpQLScIhPxXcwISw9fHfxxxsID_-ApdtXTv_RFSgZC6uZAG8jRP5w/viewform" target="_blank" rel="noopener noreferrer">S'inscrire comme bénévole</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 4. Soutien -->
-    <section id="support" class="section section-ebony" aria-labelledby="support-heading">
+    <section id="support" class="section section-ebony has-creatures" aria-labelledby="support-heading">
+      <div class="creature jellyfish" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header">
           <span class="section-kicker">Soutien</span>
@@ -139,83 +174,68 @@
           <p class="section-subtitle">Chaque don contribue à la pérennité et à la qualité de l'événement. Merci pour votre générosité.</p>
         </div>
         <div class="support-card">
-          <p>Votre contribution finance la scénographie, les artistes et les expériences immersives qui font la singularité du Bal Masqué Vénitien.</p>
+          <p>Votre contribution finance la scénographie, les artistes et les expériences immersives qui font la singularité de la Nuit sous les mers.</p>
           <br>
-          <a class="btn btn-gold" href="https://www.onparticipe.fr/c/galaenac" target="_blank" rel="noopener noreferrer">Accéder à la cagnotte officielle</a>
+          <a class="btn btn-gold" href="https://www.onparticipe.fr/c/XH07K0zO" target="_blank" rel="noopener noreferrer">Accéder à la cagnotte officielle</a>
         </div>
       </div>
     </section>
 
     <!-- 5. Programme -->
-    <section id="program" class="section section-velvet" aria-labelledby="program-heading">
+    <section id="program" class="section section-velvet has-creatures" aria-labelledby="program-heading">
+      <div class="creature manta manta-left" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header">
           <span class="section-kicker">Programme</span>
           <h2 id="program-heading" class="section-title">Déroulé de la soirée</h2>
           <p class="section-subtitle">Un tempo millimétré pour une immersion totale, du coucher du soleil jusqu'à l'aube.</p>
         </div>
-        <div class="program-options">
+        <div id="program-dive" class="program-view program-dive" hidden></div>
+        <div id="program-plan" class="program-plan" hidden></div>
 
+        <!--
+          Données du programme : SEULE source à modifier.
+          - data-venue : identifiant de la salle (voir la liste des salles) ou "all" pour un moment commun à tout le site
+          - data-start / data-end : heures au format HH:MM (après minuit = lendemain automatiquement) ; pas de data-end = moment ponctuel
+          - data-tag="cabaret" : réservé aux places cabaret
+          Sans JavaScript, ces listes s'affichent telles quelles.
+        -->
+        <div class="program-data">
+          <ul class="program-venues">
+            <li data-venue="gym">Gymnase</li>
+            <li data-venue="bleue">Salle Bleue</li>
+            <li data-venue="tdp">Théâtre de Poche</li>
+            <li data-venue="poly">Salle Polyvalente</li>
+          </ul>
+          <ol class="program-events">
+            <li data-venue="gym" data-start="18:45" data-end="20:15" data-tag="cabaret"><strong>Cabaret · Service 1</strong> <span>Accueil à 18h45, dîner-spectacle de 19h à 20h15.</span></li>
+            <li data-venue="bleue" data-start="19:00" data-end="23:45"><strong>Champagne, vin &amp; snacks</strong> <span>Bar champagne et vin, cocktails au verre, snacks par Classgift et BS.</span></li>
+            <li data-venue="gym" data-start="21:00" data-end="22:30" data-tag="cabaret"><strong>Cabaret · Service 2</strong> <span>Accueil à 21h, dîner-spectacle de 21h15 à 22h30.</span></li>
+            <li data-venue="tdp" data-start="20:00" data-end="23:45"><strong>Line-up live</strong> <span>Les artistes du Gala en concert.</span></li>
+            <li data-venue="poly" data-start="23:00" data-end="23:45"><strong>DJ set</strong> <span>Mise en jambes avant le Club.</span></li>
+            <!-- Le feu d'artifice coupe toute la soirée : aucune salle n'est ouverte pendant -->
+            <li data-venue="all" data-start="23:45" data-end="00:00"><strong>Feu d'artifice</strong> <span>Rendez-vous dehors !</span></li>
+            <li data-venue="gym" data-start="00:00" data-end="04:30"><strong>Club Gymnase</strong> <span>La piste de danse jusqu'au bout de la nuit.</span></li>
+            <li data-venue="bleue" data-start="00:00" data-end="04:30"><strong>Champagne, vin &amp; snacks</strong> <span>Bar champagne et vin, cocktails au verre, snacks par Classgift et BS.</span></li>
+            <li data-venue="tdp" data-start="00:00" data-end="02:30"><strong>Line-up live</strong> <span>Les artistes du Gala en concert.</span></li>
+            <li data-venue="poly" data-start="00:00" data-end="04:30"><strong>Salle de repos</strong> <span>Ambiance musicale douce pour souffler un peu.</span></li>
+            <li data-venue="all" data-start="04:30"><strong>Fin de la musique et fermeture</strong> <span>Merci et à l'année prochaine !</span></li>
+          </ol>
         </div>
-        <ol class="program-timeline">
-          <li class="program-item">
-            <time class="program-time" datetime="2025-11-21T18:00">18h00</time>
-            <div class="program-content">
-              <h3>Cocktails en salle bleue</h3>
-              <p>Réservé aux places cabaret avec un accueil raffiné et une première coupe pour lancer la soirée.</p>
-              <p>Accès libre à l’exposition immersive de la salle Léonard de Vinci.</p>
-            </div>
-          </li>
-          <li class="program-item">
-            <time class="program-time" datetime="2025-11-21T20:00">20h00</time>
-            <div class="program-content">
-              <h3>Cabaret avec repas assis</h3>
-                <p>Un dîner spectacle orchestré par nos artistes, mêlant gastronomie, performances artistiques et ambiance lounge.</p>
-            </div>
-          </li>
-          <li class="program-item">
-            <time class="program-time" datetime="2025-11-21T21:00">21h00</time>
-            <div class="program-content">
-              <h3>Cocktails & musique</h3>
-              <p>Retour en salle bleue pour des cocktails signatures accompagnés d’interludes musicaux</p>
-            </div>
-          </li>
-          <li class="program-item">
-            <time class="program-time" datetime="2025-11-21T23:00">23h00</time>
-            <div class="program-content">
-              <h3>Ouverture de la soirée</h3>
-              <p>Envolée musicale, concerts live et DJ sets pour faire vibrer le campus jusqu’au bout de la nuit.</p>
-            </div>
-          </li>
-          <li class="program-item">
-            <time class="program-time" datetime="2025-11-21T23:45">23h45</time>
-            <div class="program-content">
-              <h3>Feu d'artifice</h3>
-              <p>Un spectacle pyrotechnique qui embrase le ciel du campus et marque l’apogée de la nuit.</p>
-            </div>
-          </li>
-          <li class="program-item">
-            <time class="program-time" datetime="2025-11-22T04:30">04h30</time>
-            <div class="program-content">
-              <h3>Fin de la soirée</h3>
-                <p>Fin des festivités et dernière danse avant de s'en aller.</p>
-            </div>
-          </li>
-        </ol>
       </div>
     </section>
 
-    <!-- 6. Trailer -->
-    <section id="trailer" class="section section-midnight" aria-labelledby="trailer-heading">
+    <!-- 6. Aftermovie -->
+    <section id="aftermovie" class="section section-midnight" aria-labelledby="aftermovie-heading">
       <div class="container">
         <div class="section-header">
-          <span class="section-kicker">Trailer officiel</span>
-          <h2 id="trailer-heading" class="section-title">Découvrez la magie de l'édition 2025 du Gala</h2>
-          <p class="section-subtitle">Plongez dans l'atmosphère du gala et laissez-vous emporter par l'élégance vénitienne.</p>
+          <span class="section-kicker">Aftermovie</span>
+          <h2 id="aftermovie-heading" class="section-title">Revivez le Gala 2025</h2>
+          <p class="section-subtitle">Plongez dans l'atmosphère du gala et laissez-vous emporter par la magie de ses nuits.</p>
         </div>
         <div class="media-frame">
-          <video class="trailer-video" controls muted playsinline preload="metadata" poster="assets/img/hero-poster.jpg">
-            <source src="assets/video/trailer.mov" type="video/mp4">
+          <video class="trailer-video" controls playsinline preload="metadata" poster="assets/img/aftermovie-poster.jpg">
+            <source src="assets/video/aftermovie-2025-web.mp4" type="video/mp4">
             Votre navigateur ne permet pas la lecture de cette vidéo.
           </video>
         </div>
@@ -228,47 +248,98 @@
         <div class="section-header">
           <span class="section-kicker">Galerie</span>
           <h2 id="gallery-heading" class="section-title">Souvenirs des éditions précédentes</h2>
-            <p class="section-subtitle">Moments capturés, éclats de lumière et ambiances festives : revivez l'émotion du Gala 2024 !</p>
+            <p class="section-subtitle">Moments capturés, éclats de lumière et ambiances festives : revivez l'émotion des éditions 2025 et 2024 !</p>
         </div>
-        <div class="gallery-grid">
-          <figure class="gallery-item">
-            <img src="assets/img/Deco.JPG" alt="Invités du gala ">
-            <figcaption class="gallery-caption">Décoration</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="assets/img/theatre de poche.jpg" alt="Théâtre de poche">
-            <figcaption class="gallery-caption">Théâtre de poche</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="assets/img/gymnase.jpg" alt="Scène dans le gymnase">
-            <figcaption class="gallery-caption">Scène dans le gymnase</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="assets/img/spectacle.jpg" alt="Spectacle de danse">
-            <figcaption class="gallery-caption">Spectacle de danse (Troupe Rêves)</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="assets/img/fireworks.jpg" alt="Feu d'artifice">
-            <figcaption class="gallery-caption">Feu d'artifice</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="assets/img/Ambiance.jpg" alt="Salle de soirée dansante">
-            <figcaption class="gallery-caption">Soirée dansante</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="assets/img/buffet.JPG" alt="Buffet accompagné de musique élégante">
-            <figcaption class="gallery-caption">Buffet accompagné de musique élégante</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="assets/img/bar_a_champagne.JPG" alt="Bar à champagne">
-            <figcaption class="gallery-caption">Bar à champagne</figcaption>
-          </figure>
+        <div class="gallery-tabs" role="tablist" aria-label="Choisir l'édition">
+          <button class="gallery-tab" type="button" role="tab" id="gallery-tab-2025" aria-selected="true" aria-controls="gallery-2025">2025 <span class="gallery-tab-count">8 photos</span></button>
+          <button class="gallery-tab" type="button" role="tab" id="gallery-tab-2024" aria-selected="false" aria-controls="gallery-2024" tabindex="-1">2024 <span class="gallery-tab-count">8 photos</span></button>
+        </div>
+        <div id="gallery-2025" class="gallery-grid" role="tabpanel" aria-labelledby="gallery-tab-2025">
+            <a class="gallery-item" href="assets/img/galerie/web/2025-piste-1800.jpg" data-caption="Piste de danse">
+              <img src="assets/img/galerie/web/2025-piste-900.jpg" alt="Silhouettes des invités sur la piste de danse, sous des faisceaux bleus et violets" width="900" height="600" loading="lazy" decoding="async">
+              <span class="gallery-caption">Piste de danse</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2025-allee-enac-1800.jpg" data-caption="Le tapis rouge">
+              <img src="assets/img/galerie/web/2025-allee-enac-900.jpg" alt="Allée au tapis rouge sous une guirlande lumineuse, enseigne ENAC au fond" width="600" height="900" loading="lazy" decoding="async">
+              <span class="gallery-caption">Le tapis rouge</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2025-show-1800.jpg" data-caption="Show lumière">
+              <img src="assets/img/galerie/web/2025-show-900.jpg" alt="Faisceaux lumineux croisés au-dessus de la scène, logo ENAC projeté" width="900" height="506" loading="lazy" decoding="async">
+              <span class="gallery-caption">Show lumière</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2025-allee-gala-1800.jpg" data-caption="Arrivée des invités">
+              <img src="assets/img/galerie/web/2025-allee-gala-900.jpg" alt="Invités remontant le tapis rouge vers l'enseigne GALA" width="600" height="900" loading="lazy" decoding="async">
+              <span class="gallery-caption">Arrivée des invités</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2025-bar-1800.jpg" data-caption="Platines & cocktails">
+              <img src="assets/img/galerie/web/2025-bar-900.jpg" alt="Invités au bar à cocktails dans une lumière rouge et ambrée" width="628" height="900" loading="lazy" decoding="async">
+              <span class="gallery-caption">Platines & cocktails</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2025-bar-champagne-1800.jpg" data-caption="Bar à champagne">
+              <img src="assets/img/galerie/web/2025-bar-champagne-900.jpg" alt="Invitée servant une coupe au bar à champagne, sous les guirlandes lumineuses" width="900" height="600" loading="lazy" decoding="async">
+              <span class="gallery-caption">Bar à champagne</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2025-feu-1800.jpg" data-caption="Feu d'artifice">
+              <img src="assets/img/galerie/web/2025-feu-900.jpg" alt="Invités regardant le feu d'artifice au-dessus des arbres" width="600" height="900" loading="lazy" decoding="async">
+              <span class="gallery-caption">Feu d'artifice</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2025-soiree-1800.jpg" data-caption="Soirée dansante">
+              <img src="assets/img/galerie/web/2025-soiree-900.jpg" alt="Silhouettes des invités, bras levés, sous les projecteurs bleus" width="900" height="430" loading="lazy" decoding="async">
+              <span class="gallery-caption">Soirée dansante</span>
+            </a>
+        </div>
+        <div id="gallery-2024" class="gallery-grid" role="tabpanel" aria-labelledby="gallery-tab-2024" hidden>
+            <a class="gallery-item" href="assets/img/galerie/web/2024-deco-1800.jpg" data-caption="Décoration">
+              <img src="assets/img/galerie/web/2024-deco-900.jpg" alt="Couloir décoré de guirlandes lumineuses dorées" width="600" height="900" loading="lazy" decoding="async">
+              <span class="gallery-caption">Décoration</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2024-theatre-1800.jpg" data-caption="Théâtre de poche">
+              <img src="assets/img/galerie/web/2024-theatre-900.jpg" alt="Musicien jouant de la basse sous une lumière magenta" width="600" height="900" loading="lazy" decoding="async">
+              <span class="gallery-caption">Théâtre de poche</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2024-gymnase-1800.jpg" data-caption="Scène dans le gymnase">
+              <img src="assets/img/galerie/web/2024-gymnase-900.jpg" alt="Scène du gymnase sous des projecteurs rouges" width="900" height="600" loading="lazy" decoding="async">
+              <span class="gallery-caption">Scène dans le gymnase</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2024-spectacle-1800.jpg" data-caption="Spectacle de danse (Troupe Rêves)">
+              <img src="assets/img/galerie/web/2024-spectacle-900.jpg" alt="Danseurs de la Troupe Rêves sur scène" width="900" height="600" loading="lazy" decoding="async">
+              <span class="gallery-caption">Spectacle de danse (Troupe Rêves)</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2024-feu-1800.jpg" data-caption="Feu d'artifice">
+              <img src="assets/img/galerie/web/2024-feu-900.jpg" alt="Feu d'artifice au-dessus du campus" width="900" height="600" loading="lazy" decoding="async">
+              <span class="gallery-caption">Feu d'artifice</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2024-ambiance-1800.jpg" data-caption="Soirée dansante">
+              <img src="assets/img/galerie/web/2024-ambiance-900.jpg" alt="Salle de soirée dansante sous des faisceaux colorés" width="900" height="600" loading="lazy" decoding="async">
+              <span class="gallery-caption">Soirée dansante</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2024-buffet-1800.jpg" data-caption="Buffet accompagné de musique élégante">
+              <img src="assets/img/galerie/web/2024-buffet-900.jpg" alt="Buffet du gala accompagné de musiciens" width="900" height="600" loading="lazy" decoding="async">
+              <span class="gallery-caption">Buffet accompagné de musique élégante</span>
+            </a>
+            <a class="gallery-item" href="assets/img/galerie/web/2024-bar-1800.jpg" data-caption="Bar à champagne">
+              <img src="assets/img/galerie/web/2024-bar-900.jpg" alt="Bar à champagne du gala" width="900" height="600" loading="lazy" decoding="async">
+              <span class="gallery-caption">Bar à champagne</span>
+            </a>
         </div>
       </div>
+
+      <!-- Visionneuse plein écran (ouverte par gallery.js) -->
+      <dialog class="lightbox" aria-label="Visionneuse de photos">
+        <figure class="lightbox-figure">
+          <img class="lightbox-img" src="" alt="">
+          <figcaption class="lightbox-caption"><span class="lightbox-text"></span> <span class="lightbox-counter"></span></figcaption>
+        </figure>
+        <button class="lightbox-btn lightbox-close" type="button" aria-label="Fermer"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <button class="lightbox-btn lightbox-prev" type="button" aria-label="Photo précédente"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="lightbox-btn lightbox-next" type="button" aria-label="Photo suivante"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+      </dialog>
     </section>
 
+
     <!-- 8. Line-up -->
-    <section id="lineup" class="section" aria-labelledby="lineup-heading">
+    <!-- Section masquée pour l'instant (attribut « hidden ») : la retirer pour réafficher les artistes -->
+    <section id="lineup" class="section section-wave" aria-labelledby="lineup-heading" hidden>
       <div class="container">
       <div class="section-header">
         <span class="section-kicker">Line-up</span>
@@ -277,41 +348,41 @@
       </div>
       <div class="lineup-grid">
         <article class="lineup-card">
-        <img src="/assets/img/cabaret_venus.jpg" alt="Cabaret La Vénus">
+        <img src="assets/img/cabaret_venus.jpg" alt="Cabaret La Vénus">
         <div class="lineup-meta">
           <h3>Cabaret La Vénus</h3>
           <p>Show à la fois raffiné et audacieux, mêlant élégance, et éclats de lumière.</p>
         </div>
         </article>
         <article class="lineup-card">
-        <img src="assets/img/brandy_boys_trio.jpg" alt="The Brandy Boys Trio">
+        <img src="assets/img/big_ass_cat.png" alt="Big Ass Cat">
         <div class="lineup-meta">
-          <h3>The Brandy Boys Trio</h3>
-          <p>Groupe toulousain mêlant folk, pop, rock et blues, revisite avec élégance les grands classiques comme les hits modernes.</p>
+          <h3>Big Ass Cat</h3>
+          <p>Quatuor néo-funk explosif, BIG ASS CAT mêle riffs entêtants, touches japonaises et énergie rock. Entre Casiopea, Vulfpeck et Daft Punk : de la City Pop sous stéroïdes.</p>
         </div>
         </article>
         <article class="lineup-card">
-        <img src="assets/img/sonic_mess.jpg" alt="Sonic Mess">
+        <img src="assets/img/adb.png" alt="ADB">
         <div class="lineup-meta">
-          <h3>Sonic Mess</h3>
-          <p>Groupe toulousain d’indie rock / dreampop mêlant énergie rock et atmosphères planantes</p>
+          <h3>ADB</h3>
+          <p>ADB façonne une nouvelle vague de musique dance, à la fois émotionnelle et survoltée. Entre hard house, trance et rythmes inspirés de la scène UK, il crée un son puissant et mélodique, taillé pour faire bouger.</p>
         </div>
         </article>
-        <article class="lineup-card">
+        <!--<article class="lineup-card">
         <img src="assets/img/2th.png" alt="2TH">
         <div class="lineup-meta">
           <h3>2TH</h3>
           <p>2TH, rappeur parisien, s’impose comme l’un des nouveaux visages du rap français mêlant textes profonds et sonorités électro.</p>
         </div>
-        </article>
-                <article class="lineup-card" style="grid-column: 1 / -1; background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(22, 22, 26, 0.95)); border: 2px dashed rgba(212, 175, 55, 0.3);">
-        <div class="lineup-meta" style="padding: 3rem 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px;">
-          <i class="fa-solid fa-plus" style="font-size: 2.5rem; color: #d4af37; margin-bottom: 1rem;" aria-hidden="true"></i>
-          <h3 style="font-size: 1.5rem; color: #d4af37; margin-bottom: 0.5rem;">Et plus encore...</h3>
-          <p style="color: rgba(220, 220, 224, 0.8); margin-bottom: 0.75rem;">D'autres surprises et performances à découvrir le soir du Gala !</p>
-          <p style="color: rgba(212, 175, 55, 0.9); font-size: 0.95rem;">
+        </article>-->
+                <article class="lineup-card lineup-card-more">
+        <div class="lineup-meta">
+          <i class="fa-solid fa-plus lineup-more-icon" aria-hidden="true"></i>
+          <h3>Et plus encore...</h3>
+          <p>D'autres surprises et performances à découvrir le soir du Gala !</p>
+          <p class="lineup-more-social">
             <i class="fa-brands fa-instagram" aria-hidden="true"></i> 
-            Retrouvez toutes les infos sur <a href="https://www.instagram.com/galaenac" target="_blank" rel="noopener noreferrer" style="color: #d4af37; text-decoration: underline;">@galaenac</a>
+            Retrouvez toutes les infos sur <a href="https://www.instagram.com/galaenac" target="_blank" rel="noopener noreferrer">@galaenac</a>
           </p>
         </div>
         </article>
@@ -321,6 +392,39 @@
 
 
 
+
+    <!-- 8 bis. Partenaires -->
+    <section id="partners" class="section section-ebony" aria-labelledby="partners-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Partenaires</span>
+          <h2 id="partners-heading" class="section-title">Ils nous accompagnent</h2>
+          <p class="section-subtitle">Merci à nos partenaires de faire vivre le Gala ENAC.</p>
+        </div>
+        <ul class="partner-logos">
+          <li>
+            <a class="partner-logo" href="https://www.enac.fr" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/parts/silver/enac.png" alt="ENAC — École Nationale de l'Aviation Civile" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a class="partner-logo" href="https://www.alumni.enac.fr/fr/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/parts/silver/enac-alumni.png" alt="ENAC Alumni" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a class="partner-logo" href="https://www.dassault-aviation.com" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/parts/silver/dassault-aviation.svg" alt="Dassault Aviation" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a class="partner-logo" href="https://www.pathe.fr" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/parts/silver/pathe.png" alt="Pathé Labège" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
     <!-- 9. Contact (sans form) -->
     <section id="contact" class="section section-midnight" aria-labelledby="contact-heading">
@@ -341,7 +445,7 @@
               <span class="contact-feedback" aria-live="polite"></span>
             </div>
           </div>
-          <div class="contact-item contact-action" data-url="https://maps.app.goo.gl/HEZn9w9rsRUUwsjx5" role="link" tabindex="0" aria-label="Ouvrir l'adresse du Gala ENAC 2025 dans Google Maps">
+          <div class="contact-item contact-action" data-url="https://maps.app.goo.gl/HEZn9w9rsRUUwsjx5" role="link" tabindex="0" aria-label="Ouvrir l'adresse du Gala ENAC dans Google Maps">
             <div class="contact-icon">
               <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
             </div>
@@ -374,8 +478,8 @@
   <footer class="site-footer" aria-label="Pied de page">
     <div class="container footer-grid">
       <div class="footer-column">
-        <h4>Gala ENAC 2025</h4>
-        <p>Bal Masqué Vénitien — une expérience unique au sein de l'ENAC.</p>
+        <h4>Gala ENAC 2026</h4>
+        <p>Nuit sous les mers — une expérience unique au sein de l'ENAC.</p>
       </div>
       <div class="footer-column">
         <h4>Suivre l'événement</h4>
@@ -395,7 +499,7 @@
       </div>
     </div>
     <div class="footer-meta">
-      <small>© 2025 Association Gala ENAC — Tous droits réservés.</small>
+      <small>© 2026 Association Gala ENAC — Tous droits réservés.</small>
     </div>
   </footer>
 

@@ -78,7 +78,7 @@ export function initCountdown() {
     let diff = Math.max(0, target - now);
 
     if (diff <= 0) {
-      countdownEl.textContent = '� C\'est le grand soir !';
+      countdownEl.textContent = 'C\'est le grand soir !';
       return;
     }
 

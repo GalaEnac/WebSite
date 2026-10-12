@@ -43,7 +43,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--color-midnight);
+  background-color: var(--night);
   z-index: -1;
 }
 
@@ -78,5 +78,5 @@
   background: none;
   -webkit-background-clip: unset;
   background-clip: unset;
-  color: var(--color-ivory);
+  color: var(--pearl);
 }
